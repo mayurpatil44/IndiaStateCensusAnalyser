@@ -12,6 +12,7 @@ public class StateCensusAnalyzerTest {
     String INCORRECT_CSV_PATH = "D:\\IndiaStateCensusAnalyser\\src\\StateCensusData.csv";
 
 
+
     @Test
     public void givenCSVFile_WhenRead_ShouldReturnCorrectRecordCount() {
         stateCensusAnalyzer = new StateCensusAnalyzer();
@@ -63,4 +64,17 @@ public class StateCensusAnalyzerTest {
             e.printStackTrace();
         }
     }
+    @Test
+    public void givenCSVFile_WhenHeaderIncorrect_ShouldThrowStateAnalyzerException() {
+        try {
+            String INCORRECT_CSV_HEADER = "D:\\IndiaStateCensusAnalyser\\src\\InvalidHeaderCensusData.csv";
+            stateCensusAnalyzer.readCSVData(INCORRECT_CSV_HEADER);
+        } catch (StateAnalyzerException e) {
+            e.printStackTrace();
+            Assert.assertEquals(StateAnalyzerException.ExceptionType.INVALID_HEADER, e.type);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
