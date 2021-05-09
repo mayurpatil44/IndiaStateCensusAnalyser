@@ -9,7 +9,7 @@ import java.io.IOException;
 public class StateCensusAnalyzerTest {
 
     private StateCensusAnalyzer stateCensusAnalyzer;
-    String INCORRECT_CSV_PATH = "D:\\IndiaStateCensusAnalyser\\src\\test\\java\\com\\censusanalyser\\StateCensusAnalyzerTest.java";
+    String INCORRECT_CSV_PATH = "D:\\IndiaStateCensusAnalyser\\src\\StateCensusData.csv";
 
 
     @Test
@@ -38,5 +38,17 @@ public class StateCensusAnalyzerTest {
             e.printStackTrace();
         }
     }
-
+    @Test
+    public void givenAFile_WhenTypeIncorrect_ShouldThrowStateAnalyzerException() {
+        stateCensusAnalyzer = new StateCensusAnalyzer();
+        try {
+            String INCORRECT_CSV_FILETYPE = "D:\\IndiaStateCensusAnalyser\\src\\StateCensusData.json";
+            stateCensusAnalyzer.readCSVData(INCORRECT_CSV_FILETYPE);
+        } catch (StateAnalyzerException e) {
+            e.printStackTrace();
+            Assert.assertEquals(StateAnalyzerException.ExceptionType.INVALID_FILETYPE, e.type);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

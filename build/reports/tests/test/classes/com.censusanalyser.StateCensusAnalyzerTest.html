@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">1.477s</div>
+<div class="counter">0.050s</div>
 <p>duration</p>
 </div>
 </td>
@@ -64,7 +64,7 @@
 <a href="#tab0">Tests</a>
 </li>
 <li>
-<a href="#tab1">Standard output</a>
+<a href="#tab1">Standard error</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
@@ -78,44 +78,75 @@
 </tr>
 </thead>
 <tr>
-<td class="success">givenCSVFilePath_WhenIncorrect_ShouldThrowStateAnalyzerException</td>
-<td class="success">1.477s</td>
+<td class="success">givenAFile_WhenTypeIncorrect_ShouldThrowStateAnalyzerException</td>
+<td class="success">0.050s</td>
 <td class="success">passed</td>
 </tr>
 </table>
 </div>
 <div id="tab1" class="tab">
-<h2>Standard output</h2>
+<h2>Standard error</h2>
 <span class="code">
-<pre>Census [ State = Uttar Pradesh, Population = 199812341, AreaInSqKm = 240928, density = 828 ]
-Census [ State = Maharashta, Population = 112372972, AreaInSqKm = 307713, density = 365 ]
-Census [ State = Bihar, Population = 103804637, AreaInSqKm = 94163, density = 1102 ]
-Census [ State = West Bengal, Population = 91347736, AreaInSqKm = 88752, density = 1029 ]
-Census [ State = Madhya Pradesh, Population = 72597565, AreaInSqKm = 308245, density = 236 ]
-Census [ State = Tamil Nadu, Population = 72138958, AreaInSqKm = 130058, density = 555 ]
-Census [ State = Rajasthan, Population = 68621012, AreaInSqKm = 342239, density = 201 ]
-Census [ State = Karnataka, Population = 61130704, AreaInSqKm = 191791, density = 319 ]
-Census [ State = Gujarat, Population = 60383628, AreaInSqKm = 196024, density = 308 ]
-Census [ State = Andhra Pradesh, Population = 49386799, AreaInSqKm = 162968, density = 303 ]
-Census [ State = Odisha, Population = 41947358, AreaInSqKm = 155707, density = 269 ]
-Census [ State = Telangana, Population = 35286757, AreaInSqKm = 114840, density = 307 ]
-Census [ State = Kerala, Population = 33387677, AreaInSqKm = 38863, density = 859 ]
-Census [ State = Jharkhand, Population = 32966238, AreaInSqKm = 79714, density = 414 ]
-Census [ State = Assam, Population = 31169272, AreaInSqKm = 78438, density = 397 ]
-Census [ State = Punjab, Population = 27704236, AreaInSqKm = 50362, density = 550 ]
-Census [ State = Chattisgarh, Population = 25540196, AreaInSqKm = 135191, density = 189 ]
-Census [ State = Haryana, Population = 25353081, AreaInSqKm = 44212, density = 573 ]
-Census [ State = Jammu and Kashmir, Population = 12548926, AreaInSqKm = 222236, density = 57 ]
-Census [ State = Uttarakhand, Population = 10116752, AreaInSqKm = 53483, density = 189 ]
-Census [ State = Himachal Pradesh, Population = 6864602, AreaInSqKm = 55673, density = 123 ]
-Census [ State = Tripura, Population = 3671032, AreaInSqKm = 10486, density = 350 ]
-Census [ State = Meghalaya, Population = 2964007, AreaInSqKm = 22429, density = 132 ]
-Census [ State = Manipur, Population = 2721756, AreaInSqKm = 22327, density = 122 ]
-Census [ State = Nagaland, Population = 1980602, AreaInSqKm = 16579, density = 119 ]
-Census [ State = Goa, Population = 1457723, AreaInSqKm = 3702, density = 394 ]
-Census [ State = Arunachal Pradesh, Population = 1382611, AreaInSqKm = 0, density = 0 ]
-Census [ State = Mizoram, Population = 1091014, AreaInSqKm = 21081, density = 52 ]
-Census [ State = Sikkim, Population = 607688, AreaInSqKm = 7096, density = 86 ]
+<pre>java.nio.file.NoSuchFileException: C:\Users\Nc Saketh\intellij-workspace\CensusAnalyzer\src\StateCensusData.csv
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:235)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:375)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:426)
+	at java.base/java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:420)
+	at java.base/java.nio.file.Files.newInputStream(Files.java:160)
+	at java.base/java.nio.file.Files.newBufferedReader(Files.java:2916)
+	at java.base/java.nio.file.Files.newBufferedReader(Files.java:2948)
+	at com.censusanalyser.StateCensusAnalyzer.readCSVData(StateCensusAnalyzer.java:29)
+	at com.censusanalyser.StateCensusAnalyzerTest.givenAFile_WhenTypeIncorrect_ShouldThrowStateAnalyzerException(StateCensusAnalyzerTest.java:46)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:119)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:182)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:164)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:414)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:48)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
+	at java.base/java.lang.Thread.run(Thread.java:832)
 </pre>
 </span>
 </div>
@@ -127,7 +158,7 @@ Census [ State = Sikkim, Population = 607688, AreaInSqKm = 7096, density = 86 ]
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 6.8</a> at May 9, 2021, 5:44:25 PM</p>
+<a href="http://www.gradle.org">Gradle 6.8</a> at May 9, 2021, 5:52:05 PM</p>
 </div>
 </div>
 </body>

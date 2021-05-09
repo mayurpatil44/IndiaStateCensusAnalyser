@@ -16,16 +16,19 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.8/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/censusanalyser/CensusAnalyzerMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/censusanalyser/CensusAnalyzerMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/censusanalyser/StateAnalyzerException$ExceptionType.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/censusanalyser/StateAnalyzerException$ExceptionType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/censusanalyser/StateAnalyzerException.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/censusanalyser/StateAnalyzerException.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/censusanalyser/StateCensusAnalyzer.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/censusanalyser/StateCensusAnalyzer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/censusanalyser/StateCensusAnalyzerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/censusanalyser/StateCensusAnalyzerTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.censusanalyser.StateCensusAnalyzerTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/com.censusanalyser.StateCensusAnalyzerTest.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/com.censusanalyser.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/com.censusanalyser.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.censusanalyser.StateCensusAnalyzerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-com.censusanalyser.StateCensusAnalyzerTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/censusanalyser/CensusAnalyzerMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/censusanalyser/CensusAnalyzerMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/censusanalyser/StateAnalyzerException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/censusanalyser/StateAnalyzerException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/censusanalyser/StateCensusAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/censusanalyser/StateCensusAnalyzer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/censusanalyser/StateCensusAnalyzerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/censusanalyser/StateCensusAnalyzerTest.java" afterDir="false" />
     </list>
@@ -63,7 +66,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="Gradle.StateCensusAnalyzerTest.givenCSVFilePath_WhenIncorrect_ShouldThrowStateAnalyzerException">
+  <component name="RunManager" selected="Gradle.StateCensusAnalyzerTest.givenAFile_WhenTypeIncorrect_ShouldThrowStateAnalyzerException">
     <configuration name="CensusAnalyzerMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.censusanalyser.CensusAnalyzerMain" />
       <module name="IndiaStateCensusAnalyser.main" />
@@ -76,6 +79,27 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="StateCensusAnalyzerTest.givenAFile_WhenTypeIncorrect_ShouldThrowStateAnalyzerException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.censusanalyser.StateCensusAnalyzerTest.givenAFile_WhenTypeIncorrect_ShouldThrowStateAnalyzerException&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
     </configuration>
     <configuration name="StateCensusAnalyzerTest.givenCSVFilePath_WhenIncorrect_ShouldThrowStateAnalyzerException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -121,8 +145,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.StateCensusAnalyzerTest.givenCSVFilePath_WhenIncorrect_ShouldThrowStateAnalyzerException" />
+        <item itemvalue="Gradle.StateCensusAnalyzerTest.givenAFile_WhenTypeIncorrect_ShouldThrowStateAnalyzerException" />
         <item itemvalue="Gradle.StateCensusAnalyzerTest.givenCSVFile_WhenRead_ShouldReturnCorrectRecordCount" />
+        <item itemvalue="Gradle.StateCensusAnalyzerTest.givenCSVFilePath_WhenIncorrect_ShouldThrowStateAnalyzerException" />
         <item itemvalue="Application.CensusAnalyzerMain" />
       </list>
     </recent_temporary>
