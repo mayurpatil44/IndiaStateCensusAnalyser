@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.censusanalyser.StateCensusAnalyzerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-05-09T11:52:54" hostname="DESKTOP-45808RR" time="0.53">
+<testsuite name="com.censusanalyser.StateCensusAnalyzerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-05-09T12:00:59" hostname="DESKTOP-45808RR" time="0.269">
   <properties/>
-  <testcase name="givenCSVFile_WhenRead_ShouldReturnCorrectRecordCount" classname="com.censusanalyser.StateCensusAnalyzerTest" time="0.53"/>
+  <testcase name="givenCSVFile_WhenRead_ShouldReturnCorrectRecordCount" classname="com.censusanalyser.StateCensusAnalyzerTest" time="0.269"/>
   <system-out><![CDATA[Census [ State = Uttar Pradesh, Population = 199812341, AreaInSqKm = 240928, density = 828 ]
 Census [ State = Maharashta, Population = 112372972, AreaInSqKm = 307713, density = 365 ]
 Census [ State = Bihar, Population = 103804637, AreaInSqKm = 94163, density = 1102 ]
