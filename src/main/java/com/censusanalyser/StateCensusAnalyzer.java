@@ -13,7 +13,7 @@ import java.util.Iterator;
 
 public class StateCensusAnalyzer {
     private static int count = 0;
-    public static final String CSV_PATH = "D:\\IndiaStateCensusAnalyser\\src\\StateCensusData.csv";
+    public static final String CSV_PATH = "C:\\Users\\Nc Saketh\\intellij-workspace\\CensusAnalyzer\\src\\StateCensusData.csv";
 
     private boolean isCSVFile(String filePath) {
         if (filePath.contains(".csv"))
@@ -88,25 +88,31 @@ public class StateCensusAnalyzer {
         return count;
     }
 
-    public int readStateCodeCSVData(String FilePath) {
-        int count = 0;
+    public int readStateCodeCSVData(String FilePath) throws StateAnalyzerException, IOException {
+
+        //Checks file path
         try {
             Files.newBufferedReader(Paths.get(FilePath));
-            Reader reader = Files.newBufferedReader(Paths.get(FilePath));
-            CsvToBean<CSVStates> csvToBean =  new CsvToBeanBuilder<CSVStates>(reader)
-                    .withIgnoreLeadingWhiteSpace(true)
-                    .withSkipLines(1)
-                    .withType(CSVStates.class).build();
-
-            Iterator<CSVStates> csvIterator = csvToBean.iterator();
-            while (csvIterator.hasNext()) {
-                count++;
-                CSVStates csvData = csvIterator.next();
-                System.out.println(csvData);
-            }
-        } catch (Exception exception) {
-            exception.printStackTrace();
+        } catch (IOException e) {
+            throw new StateAnalyzerException("Invalid Path Name", StateAnalyzerException.ExceptionType.INVALID_FILE_PATH);
         }
+
+        Reader reader = Files.newBufferedReader(Paths.get(FilePath));
+
+        //Gets records count
+        CsvToBean<CSVStates> csvToBean = new CsvToBeanBuilder<CSVStates>(reader)
+                .withIgnoreLeadingWhiteSpace(true)
+                .withSkipLines(1)
+                .withType(CSVStates.class).build();
+
+        int count = 0;
+        Iterator<CSVStates> csvIterator = csvToBean.iterator();
+        while (csvIterator.hasNext()) {
+            count++;
+            CSVStates csvData = csvIterator.next();
+            System.out.println(csvData);
+        }
+
         return count;
     }
 }

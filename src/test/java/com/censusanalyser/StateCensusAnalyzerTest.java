@@ -13,7 +13,6 @@ public class StateCensusAnalyzerTest {
     String STATECODES_CSV_PATH = "D:\\IndiaStateCensusAnalyser\\src\\StateCode.csv";
 
 
-
     @Test
     public void givenCSVFile_WhenRead_ShouldReturnCorrectRecordCount() {
         stateCensusAnalyzer = new StateCensusAnalyzer();
@@ -40,6 +39,7 @@ public class StateCensusAnalyzerTest {
             e.printStackTrace();
         }
     }
+
     @Test
     public void givenAFile_WhenTypeIncorrect_ShouldThrowStateAnalyzerException() {
         stateCensusAnalyzer = new StateCensusAnalyzer();
@@ -53,18 +53,20 @@ public class StateCensusAnalyzerTest {
             e.printStackTrace();
         }
     }
+
     @Test
-    public void givenCSVFile_WhenDelimiterIncorrect_ShouldThrowStateAnalyzerException()  {
+    public void givenCSVFile_WhenDelimiterIncorrect_ShouldThrowStateAnalyzerException() {
         try {
             String INCORRECT_CSV_DELIMITER = "D:\\IndiaStateCensusAnalyser\\src\\InvalidDelimiterCensusData.csv";
             stateCensusAnalyzer.readCSVData(INCORRECT_CSV_DELIMITER);
         } catch (StateAnalyzerException e) {
             e.printStackTrace();
-            Assert.assertEquals(StateAnalyzerException.ExceptionType.INVALID_DELIMITER , e.type);
+            Assert.assertEquals(StateAnalyzerException.ExceptionType.INVALID_DELIMITER, e.type);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
     @Test
     public void givenCSVFile_WhenHeaderIncorrect_ShouldThrowStateAnalyzerException() {
         try {
@@ -77,11 +79,24 @@ public class StateCensusAnalyzerTest {
             e.printStackTrace();
         }
     }
+
     @Test
-    public void givenStateCodesCSV_WhenRead_ShouldReturnCorrectRecordCount() {
+    public void givenStateCodesCSV_WhenRead_ShouldReturnCorrectRecordCount() throws StateAnalyzerException, IOException {
         String STATECODES_CSV_PATH = "D:\\IndiaStateCensusAnalyser\\src\\StateCode.csv";
         int result = stateCensusAnalyzer.readStateCodeCSVData(STATECODES_CSV_PATH);
         Assert.assertEquals(37, result);
     }
 
+    @Test
+    public void givenStateCodesCSVFilePath_WhenIncorrect_ShouldThrowStateAnalyzerException() {
+        try {
+            String INCORRECT_STATECODE_CSV_PATH = "D:\\IndiaStateCensusAnalyser\\src\\StateCode.csv";
+            stateCensusAnalyzer.readStateCodeCSVData(INCORRECT_STATECODE_CSV_PATH);
+        } catch (StateAnalyzerException e) {
+            e.printStackTrace();
+            Assert.assertEquals(StateAnalyzerException.ExceptionType.INVALID_FILE_PATH, e.type);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

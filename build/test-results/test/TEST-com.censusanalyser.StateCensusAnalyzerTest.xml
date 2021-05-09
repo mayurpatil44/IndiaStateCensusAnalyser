@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.censusanalyser.StateCensusAnalyzerTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2021-05-09T17:45:23" hostname="DESKTOP-45808RR" time="0.003">
+<testsuite name="com.censusanalyser.StateCensusAnalyzerTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2021-05-09T17:53:35" hostname="DESKTOP-45808RR" time="0.004">
   <properties/>
-  <testcase name="givenStateCodesCSV_WhenRead_ShouldReturnCorrectRecordCount" classname="com.censusanalyser.StateCensusAnalyzerTest" time="0.003">
+  <testcase name="givenStateCodesCSVFilePath_WhenIncorrect_ShouldThrowStateAnalyzerException" classname="com.censusanalyser.StateCensusAnalyzerTest" time="0.004">
     <failure message="java.lang.NullPointerException: Cannot invoke &quot;com.censusanalyser.StateCensusAnalyzer.readStateCodeCSVData(String)&quot; because &quot;this.stateCensusAnalyzer&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;com.censusanalyser.StateCensusAnalyzer.readStateCodeCSVData(String)&quot; because &quot;this.stateCensusAnalyzer&quot; is null
-	at com.censusanalyser.StateCensusAnalyzerTest.givenStateCodesCSV_WhenRead_ShouldReturnCorrectRecordCount(StateCensusAnalyzerTest.java:83)
+	at com.censusanalyser.StateCensusAnalyzerTest.givenStateCodesCSVFilePath_WhenIncorrect_ShouldThrowStateAnalyzerException(StateCensusAnalyzerTest.java:94)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
