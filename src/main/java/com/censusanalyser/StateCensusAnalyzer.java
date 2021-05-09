@@ -1,4 +1,5 @@
 package com.censusanalyser;
+
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
 
@@ -100,7 +101,8 @@ public class StateCensusAnalyzer {
             Iterator<CSVStates> csvIterator = csvToBean.iterator();
             while (csvIterator.hasNext()) {
                 count++;
-                System.out.println(csvIterator.next());
+                CSVStates csvData = csvIterator.next();
+                System.out.println(csvData);
             }
         } catch (Exception exception) {
             exception.printStackTrace();

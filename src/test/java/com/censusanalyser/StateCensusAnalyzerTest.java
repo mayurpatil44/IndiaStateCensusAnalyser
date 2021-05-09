@@ -10,6 +10,7 @@ public class StateCensusAnalyzerTest {
 
     private StateCensusAnalyzer stateCensusAnalyzer;
     String INCORRECT_CSV_PATH = "D:\\IndiaStateCensusAnalyser\\src\\StateCensusData.csv";
+    String STATECODES_CSV_PATH = "D:\\IndiaStateCensusAnalyser\\src\\StateCode.csv";
 
 
 
@@ -75,6 +76,12 @@ public class StateCensusAnalyzerTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    @Test
+    public void givenStateCodesCSV_WhenRead_ShouldReturnCorrectRecordCount() {
+        String STATECODES_CSV_PATH = "D:\\IndiaStateCensusAnalyser\\src\\StateCode.csv";
+        int result = stateCensusAnalyzer.readStateCodeCSVData(STATECODES_CSV_PATH);
+        Assert.assertEquals(37, result);
     }
 
 }

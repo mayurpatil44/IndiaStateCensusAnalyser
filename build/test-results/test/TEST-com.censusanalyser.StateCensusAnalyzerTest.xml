@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.censusanalyser.StateCensusAnalyzerTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2021-05-09T16:11:24" hostname="DESKTOP-45808RR" time="0.004">
+<testsuite name="com.censusanalyser.StateCensusAnalyzerTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2021-05-09T17:45:23" hostname="DESKTOP-45808RR" time="0.003">
   <properties/>
-  <testcase name="givenCSVFile_WhenDelimiterIncorrect_ShouldThrowStateAnalyzerException" classname="com.censusanalyser.StateCensusAnalyzerTest" time="0.004">
-    <failure message="java.lang.NullPointerException: Cannot invoke &quot;com.censusanalyser.StateCensusAnalyzer.readCSVData(String)&quot; because &quot;this.stateCensusAnalyzer&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;com.censusanalyser.StateCensusAnalyzer.readCSVData(String)&quot; because &quot;this.stateCensusAnalyzer&quot; is null
-	at com.censusanalyser.StateCensusAnalyzerTest.givenCSVFile_WhenDelimiterIncorrect_ShouldThrowStateAnalyzerException(StateCensusAnalyzerTest.java:59)
+  <testcase name="givenStateCodesCSV_WhenRead_ShouldReturnCorrectRecordCount" classname="com.censusanalyser.StateCensusAnalyzerTest" time="0.003">
+    <failure message="java.lang.NullPointerException: Cannot invoke &quot;com.censusanalyser.StateCensusAnalyzer.readStateCodeCSVData(String)&quot; because &quot;this.stateCensusAnalyzer&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;com.censusanalyser.StateCensusAnalyzer.readStateCodeCSVData(String)&quot; because &quot;this.stateCensusAnalyzer&quot; is null
+	at com.censusanalyser.StateCensusAnalyzerTest.givenStateCodesCSV_WhenRead_ShouldReturnCorrectRecordCount(StateCensusAnalyzerTest.java:83)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
