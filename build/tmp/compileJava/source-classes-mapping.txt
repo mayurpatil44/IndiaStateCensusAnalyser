@@ -1,3 +1,5 @@
+com/censusanalyser/CSVStates.java
+ com.censusanalyser.CSVStates
 com/censusanalyser/StateAnalyzerException.java
  com.censusanalyser.StateAnalyzerException
  com.censusanalyser.StateAnalyzerException$ExceptionType

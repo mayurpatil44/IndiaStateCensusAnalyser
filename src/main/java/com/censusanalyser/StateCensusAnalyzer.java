@@ -1,5 +1,4 @@
 package com.censusanalyser;
-
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
 
@@ -9,12 +8,11 @@ import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Iterator;
-import java.util.regex.Pattern;
 
 
 public class StateCensusAnalyzer {
     private static int count = 0;
-    public static final String CSV_PATH = "C:\\Users\\Nc Saketh\\intellij-workspace\\CensusAnalyzer\\src\\StateCensusData.csv";
+    public static final String CSV_PATH = "D:\\IndiaStateCensusAnalyser\\src\\StateCensusData.csv";
 
     private boolean isCSVFile(String filePath) {
         if (filePath.contains(".csv"))
@@ -86,7 +84,27 @@ public class StateCensusAnalyzer {
             System.out.println(csvData);
         }
 
+        return count;
+    }
 
+    public int readStateCodeCSVData(String FilePath) {
+        int count = 0;
+        try {
+            Files.newBufferedReader(Paths.get(FilePath));
+            Reader reader = Files.newBufferedReader(Paths.get(FilePath));
+            CsvToBean<CSVStates> csvToBean =  new CsvToBeanBuilder<CSVStates>(reader)
+                    .withIgnoreLeadingWhiteSpace(true)
+                    .withSkipLines(1)
+                    .withType(CSVStates.class).build();
+
+            Iterator<CSVStates> csvIterator = csvToBean.iterator();
+            while (csvIterator.hasNext()) {
+                count++;
+                System.out.println(csvIterator.next());
+            }
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
         return count;
     }
 }
