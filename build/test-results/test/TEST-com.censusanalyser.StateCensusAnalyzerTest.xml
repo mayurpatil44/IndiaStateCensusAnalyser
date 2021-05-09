@@ -1,21 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.censusanalyser.StateCensusAnalyzerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-05-09T12:22:05" hostname="DESKTOP-45808RR" time="0.05">
+<testsuite name="com.censusanalyser.StateCensusAnalyzerTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2021-05-09T13:24:50" hostname="DESKTOP-45808RR" time="0.006">
   <properties/>
-  <testcase name="givenAFile_WhenTypeIncorrect_ShouldThrowStateAnalyzerException" classname="com.censusanalyser.StateCensusAnalyzerTest" time="0.05"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[java.nio.file.NoSuchFileException: C:\Users\Nc Saketh\intellij-workspace\CensusAnalyzer\src\StateCensusData.csv
-	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
-	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
-	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
-	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:235)
-	at java.base/java.nio.file.Files.newByteChannel(Files.java:375)
-	at java.base/java.nio.file.Files.newByteChannel(Files.java:426)
-	at java.base/java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:420)
-	at java.base/java.nio.file.Files.newInputStream(Files.java:160)
-	at java.base/java.nio.file.Files.newBufferedReader(Files.java:2916)
-	at java.base/java.nio.file.Files.newBufferedReader(Files.java:2948)
-	at com.censusanalyser.StateCensusAnalyzer.readCSVData(StateCensusAnalyzer.java:29)
-	at com.censusanalyser.StateCensusAnalyzerTest.givenAFile_WhenTypeIncorrect_ShouldThrowStateAnalyzerException(StateCensusAnalyzerTest.java:46)
+  <testcase name="givenCSVFile_WhenDelimiterIncorrect_ShouldThrowStateAnalyzerException" classname="com.censusanalyser.StateCensusAnalyzerTest" time="0.006">
+    <failure message="java.lang.NullPointerException: Cannot invoke &quot;com.censusanalyser.StateCensusAnalyzer.readCSVData(String)&quot; because &quot;this.stateCensusAnalyzer&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;com.censusanalyser.StateCensusAnalyzer.readCSVData(String)&quot; because &quot;this.stateCensusAnalyzer&quot; is null
+	at com.censusanalyser.StateCensusAnalyzerTest.givenCSVFile_WhenDelimiterIncorrect_ShouldThrowStateAnalyzerException(StateCensusAnalyzerTest.java:58)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -63,5 +51,8 @@
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
 	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
 	at java.base/java.lang.Thread.run(Thread.java:832)
-]]></system-err>
+</failure>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
 </testsuite>

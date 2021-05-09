@@ -51,4 +51,16 @@ public class StateCensusAnalyzerTest {
             e.printStackTrace();
         }
     }
+    @Test
+    public void givenCSVFile_WhenDelimiterIncorrect_ShouldThrowStateAnalyzerException()  {
+        try {
+            String INCORRECT_CSV_DELIMITER = "D:\\IndiaStateCensusAnalyser\\src\\InvalidDelimiterCensusData.csv";
+            stateCensusAnalyzer.readCSVData(INCORRECT_CSV_DELIMITER);
+        } catch (StateAnalyzerException e) {
+            e.printStackTrace();
+            Assert.assertEquals(StateAnalyzerException.ExceptionType.INVALID_DELIMITER , e.type);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
