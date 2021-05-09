@@ -1,5 +1,6 @@
 package com.censusanalyser;
 
+
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
 
@@ -13,7 +14,7 @@ import java.util.Iterator;
 
 public class StateCensusAnalyzer {
     private static int count = 0;
-    public static final String CSV_PATH = "C:\\Users\\Nc Saketh\\intellij-workspace\\CensusAnalyzer\\src\\StateCensusData.csv";
+    public static final String CSV_PATH = "D:\\IndiaStateCensusAnalyser\\src\\StateCensusData.csv";
 
     private boolean isCSVFile(String filePath) {
         if (filePath.contains(".csv"))
@@ -46,6 +47,21 @@ public class StateCensusAnalyzer {
         }
     }
 
+    private void checkStateCodeHeader(Reader reader) throws StateAnalyzerException, IOException {
+        BufferedReader bufferedReader = new BufferedReader(reader);
+        String header;
+        if ((header = bufferedReader.readLine()) != null) {
+            String[] headerArray = header.split(",");
+            boolean CorrectHead = headerArray[0].equals("SrNo") &&
+                    headerArray[1].equals("State Name") &&
+                    headerArray[2].equals("TIN") &&
+                    headerArray[3].equals("State Code");
+            if (!CorrectHead) {
+                throw new StateAnalyzerException("Invalid Headers",
+                        StateAnalyzerException.ExceptionType.INVALID_HEADER);
+            }
+        }
+    }
 
     public int readCSVData(String filePath) throws IOException, StateAnalyzerException {
 
@@ -94,6 +110,16 @@ public class StateCensusAnalyzer {
         if (!isCSVFile(filePath))
             throw new StateAnalyzerException("Invalid File Type", StateAnalyzerException.ExceptionType.INVALID_FILETYPE);
 
+        Reader reader = Files.newBufferedReader(Paths.get(filePath));
+        reader.mark(1000);
+
+        //Check Delimiter
+        checkDelimiter(reader);
+
+        //Check Headers
+        reader.reset();
+        checkStateCodeHeader(reader);
+
         //Checks file path
         try {
             Files.newBufferedReader(Paths.get(filePath));
@@ -101,22 +127,18 @@ public class StateCensusAnalyzer {
             throw new StateAnalyzerException("Invalid Path Name", StateAnalyzerException.ExceptionType.INVALID_FILE_PATH);
         }
 
-        Reader reader = Files.newBufferedReader(Paths.get(filePath));
-
         //Gets records count
+        reader.reset();
         CsvToBean<CSVStates> csvToBean = new CsvToBeanBuilder<CSVStates>(reader)
                 .withIgnoreLeadingWhiteSpace(true)
                 .withSkipLines(1)
                 .withType(CSVStates.class).build();
-
-        int count = 0;
         Iterator<CSVStates> csvIterator = csvToBean.iterator();
         while (csvIterator.hasNext()) {
             count++;
-            CSVStates csvData = csvIterator.next();
-            System.out.println(csvData);
+            CSVStates csvData2 = csvIterator.next();
+            System.out.println(csvData2);
         }
-
         return count;
     }
 }
